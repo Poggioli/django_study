@@ -1,3 +1,5 @@
+from re import template
+
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render
 
@@ -9,7 +11,7 @@ def home(request: HttpRequest) -> HttpResponse:
     })
 
 def contact(request: HttpRequest) -> HttpResponse:
-    return HttpResponse(request.path)
+    return render(request=request, template_name='mothies/contact.html')
 
 def about(request: HttpRequest) -> HttpResponse:
     return HttpResponse(request.path)
