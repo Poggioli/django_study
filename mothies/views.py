@@ -4,7 +4,9 @@ from django.shortcuts import render
 
 # Create your views here.
 def home(request: HttpRequest) -> HttpResponse:
-    return HttpResponse(request.path)
+    return render(request=request, template_name='mothies/home.html', context={
+        'name': 'João Pogiolli'
+    })
 
 def contact(request: HttpRequest) -> HttpResponse:
     return HttpResponse(request.path)
